@@ -11,6 +11,10 @@ const app = express()
 // Initialize middleware:
 // app.use(logger)
 
+// Body parser middleware:
+app.use(express.json()) // Allow to handle raw JSON.
+app.use(express.urlencoded({ extended: false }))
+
 // Set static folder:
 app.use(express.static(path.join(__dirname, 'public')))
 
